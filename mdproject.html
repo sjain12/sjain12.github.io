@@ -1,0 +1,1146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shweta Jain</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 900px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46570151-1', 'shwetaj.in');
+  ga('send', 'pageview');
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+	  <li><a href="index.html#publications">Publications</a></li>
+	  <li><a href="index.html#projects">Projects</a></li>
+	  <li><a href="index.html#resume">Resume</a></li>
+        </ul>
+	<h3><a class="muted" href="http://www.shwetaj.in">Shweta Jain</a></h3>
+      </div>
+      <hr>
+<div class="row-fluid" style="color:maroon;" align="justify"><p>This is the first draft of a page describing my research in mechanism design carried out under the guidance of Prof. Jason Hartline, Northwestern University. This work is still in progress. Please check back for more updates. This webpage is best viewed in Firefox. In case there is a problem viewing this page in your browser, please refer <a href="mdproject.pdf">this pdf</a>.</p>
+	</div>
+<hr>
+
+<h4 id="description" align="center">Geometric Properties of Optimal Mechanisms for Multi-Dimensional Agents</h4>
+<div class="row-fluid" align="justify">
+<h5>1 Introduction</h5>
+<p>
+Myerson’s seminal work in mechanism design describes what optimal mechanisms in auctions for single-dimensional unit-demand agents look like [<a href='#key-1'>1</a>]. However, not much is known about optimal mechanisms for multi-dimensional agents and indeed, some of the results that hold true for single dimensional agents do not hold true for multi-dimensional ones. For example, optimal mechanisms for single-dimensional agents are deterministic [<a href='#key-1'>1</a>] while those for multi-dimensional agents may be randomized as noted independently by Thanassoulis [<a href='#key-2'>2</a>] and Manelli and Vincent [<a href='#key-3'>3</a>]. We use a geometric approach to explore the structure of optimal mechanisms for multi-dimensional agents to derive an intuition for their economic properties. </p>
+
+<p>
+The central problem is that computing the optimal mechanism for multi-dimensional agents is intractable for higher dimensions. The next best one can do is to use mechanisms that may not be optimal, but are close to optimal and simple to design. This leads to some important questions: how bad would these simple mechanisms be? How can we design mechanisms that are simple yet close to optimal? If we impose certain restrictions on the agent preferences, do the optimal mechanisms become simpler? Obtaining good bounds for these scenarios and understanding what impact the type distribution of the agent has on the form of these mechanisms, is important in answering these questions.</p>
+
+<p>
+The optimal mechanism design problem can be expressed as an LP with constraints that impose a convex structure on the solution. The LP alone does not give much insight into the kind of behavior to expect of the mechanism, but certain preliminary geometric observations suggest that there are underlying patterns which we can exploit and derive meaningful correlations from. The hope thus, is that by creating tools to visualize these mechanisms we can perform a series of experiments and seek answers to many relevant questions. For example, can we maybe understand some properties of the optimal mechanism and try to emulate those properties, like rules of thumb in our approximate mechanisms? What kind of distributions lead to what kind of outcomes (i.e. can we come up with some empirical examples for types of outcomes)? By observing the structure of optimal mechanisms for certain distributions, can we say something about the optimal mechanisms for some other similar distributions? How do these mechanisms behave when there are some additional constraints like the supply constraint or the allocation constraint? How robust are these outcomes? By answering these and a host of other questions, we hope to get an intuition for, and better understand the underlying geometry of these mechanisms for the multi-dimensional cases and perhaps, even find a possible direction for being able to come up with a generalized theory that would apply to multiple as well as single dimensional situations.</p>
+<h5>2 Optimal Mechanism for Multi-Dimensional Agents (Generic Problem with Ex-ante supply Constraint) </h5>
+<p>
+Consider a seller having <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>m</mi>
+ </mrow></math> items to sell and a customer (henceforth called agent) who wants to buy one of the <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>m</mi>
+ </mrow></math> items (i.e. the customer is a unit-demand agent). The agent has a private value for each of the items which is known only to herself. Each such set of values for the m items describes the “type” of the agent and such an agent is called an <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>m</mi>
+ </mrow></math>-dimensional agent. To be able to analyze these mechanisms using computers, we consider the type space of the agent to be finite and discrete. Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>n</mi>
+ </mrow></math> be the number of different types the agent can take, <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>f</mi>
+   </mrow>
+   <mrow><mi>i</mi>
+   </mrow>
+  </msub>
+ </mrow></math> denote the probability that the agent is of type <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>i</mi>
+ </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>v</mi>
+   </mrow>
+   <mrow>
+    <mrow><mi>i</mi><mi>j</mi>
+    </mrow>
+   </mrow>
+  </msub>
+ </mrow></math> denote the value that agent with type <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>i</mi>
+ </mrow></math> has for item <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>j</mi>
+ </mrow></math>. </p>
+
+<p>
+The seller wants to sell the items in a way that maximizes his revenue. It has been shown that instead of using fixed prices for the m items, a seller in the case of a multi-dimensional agent has a better chance of achieving a higher revenue if he uses a randomized approach [<a href='#key-2'>2</a>][<a href='#key-3'>3</a>]. He may do so by publishing a set of &ldquo;lotteries&rdquo; from which the agent can choose the one which maximizes her &ldquo;utility&rdquo;, based on her type. A lottery is simply an option of the form <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <mrow>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub><mo>,</mo>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub><mo>,</mo><mo>…</mo>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mi>m</mi>
+    </mrow>
+   </msub><mo>,</mo><mi>p</mi>
+  </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+ </mrow></math> where <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>x</mi>
+   </mrow>
+   <mrow><mi>j</mi>
+   </mrow>
+  </msub>
+ </mrow></math> is the probability with which the agent will be given item j and p denotes the amount she would have to pay, should she choose to take this lottery, and the utility that an agent derives from buying such a lottery is given by <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>u</mi><mo>=</mo>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>i</mi><mn>1</mn>
+     </mrow>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow>
+     <mrow><mi>i</mi><mn>2</mn>
+     </mrow>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub><mo>+</mo><mo>…</mo><mo>-</mo><mi>p</mi>
+  </mrow>
+ </mrow></math>. Note that <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><munder accent='false'><mo> &sum; </mo><mi>j</mi></munder>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mi>j</mi>
+    </mrow>
+   </msub><mo> &les; </mo><mn>1</mn>
+  </mrow>
+ </mrow></math> (the inequality implies that even after buying the lottery, there is a chance that the agent may not be assigned anything). Thus, once the agent chooses a lottery, she will be assigned one (or none) of the m objects based on the probabilities specified in the lottery.</p>
+
+<p>
+The seller though unaware of the exact type of the agent, has a joint probability distribution of the agent’s values for the items. The challenge for the seller thus, is: to design a revenue-optimal set of lotteries given a probability distribution for the agent preferences. We consider the zero lottery denoted by L0, which neither sells anything (all <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>x</mi>
+   </mrow>
+   <mrow><mi>i</mi>
+   </mrow>
+  </msub>
+ </mrow></math> are zero) nor collects any payment, to be an option available by default. This implies that the agent has the option to buy nothing and hence her maximum utility is always non-negative. For the agent to prefer a particular lottery, her utility from the lottery has to be atleast as much as her utility from all other lotteries, including the zero lottery.</p>
+
+<p>
+In addition to the above, the seller has a supply constraint which restricts the fraction of times the seller is allowed to make a sale to <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mover>
+   <mrow><mi>q</mi>
+   </mrow><mo stretchy="true">&circ;</mo>
+  </mover>
+ </mrow></math>. We call this the problem of optimizing the revenue subject to an ex-ante supply constraint (ex-ante meaning before the type of the agent is drawn). Thus, if we let <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>l</mi>
+    </mrow>
+    <mrow><mi>i</mi>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+   <mrow>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow>
+      <mrow><mi>i</mi><mn>1</mn>
+      </mrow>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow>
+      <mrow><mi>i</mi><mn>2</mn>
+      </mrow>
+     </mrow>
+    </msub><mo>,</mo><mn>...</mn>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow>
+      <mrow><mi>i</mi><mi>m</mi>
+      </mrow>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>p</mi>
+     </mrow>
+     <mrow><mi>i</mi>
+     </mrow>
+    </msub>
+   </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  </mrow>
+ </mrow></math> denote the <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msup>
+   <mrow><mi>i</mi>
+   </mrow>
+   <mrow>
+    <mrow><mi>t</mi><mi>h</mi>
+    </mrow>
+   </mrow>
+  </msup>
+ </mrow></math> lottery i.e. the lottery that is optimal for agent type <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>i</mi>
+ </mrow></math>, then the solution for the above problem is given by the following linear program:<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+ <mtable>
+  <mtr>
+   <mtd>
+    <mstyle mathvariant='normal'>
+     <mrow><mi>m</mi><mi>a</mi><mi>x</mi><mi>i</mi><mi>m</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>:</mo>&nbsp;
+     </mrow>
+    </mstyle>
+   </mtd>
+   <mtd>
+    <mrow>
+     <msubsup>
+      <mrow><mo> &sum; </mo>
+      </mrow>
+      <mrow>
+       <mrow><mi>i</mi><mo>=</mo><mn>1</mn>
+       </mrow>
+      </mrow>
+      <mrow><mi>n</mi>
+      </mrow>
+     </msubsup>
+     <msub>
+      <mrow><mi>f</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub>
+     <msub>
+      <mrow><mi>p</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub> 
+    </mrow>
+   </mtd>
+   <mtd><mrow/>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mstyle mathvariant='normal'>
+     <mrow><mi>s</mi><mi>u</mi><mi>b</mi><mi>j</mi><mi>e</mi><mi>c</mi><mi>t</mi>&nbsp;<mi>t</mi><mi>o</mi><mo>:</mo>&nbsp;
+     </mrow>
+    </mstyle>
+   </mtd>
+   <mtd>
+    <mrow><munder accent='false'><mo> &sum; </mo><mi>j</mi></munder>
+     <msub>
+      <mrow><mi>v</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>i</mi><mi>j</mi>
+       </mrow>
+      </mrow>
+     </msub>
+     <msub>
+      <mrow><mi>x</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>i</mi><mi>j</mi>
+       </mrow>
+      </mrow>
+     </msub><mo>-</mo>
+     <msub>
+      <mrow><mi>p</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub><mo> &ges; </mo><munder accent='false'><mo> &sum; </mo><mi>j</mi></munder>
+     <msub>
+      <mrow><mi>v</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>i</mi><mi>j</mi>
+       </mrow>
+      </mrow>
+     </msub>
+     <msub>
+      <mrow><mi>x</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>k</mi><mi>j</mi>
+       </mrow>
+      </mrow>
+     </msub><mo>-</mo>
+     <msub>
+      <mrow><mi>p</mi>
+      </mrow>
+      <mrow><mi>k</mi>
+      </mrow>
+     </msub><mo>,</mo> <mn>1</mn><mo> &le; </mo><mi>i</mi><mo>,</mo><mi>k</mi><mo> &le; </mo><mi>n</mi>
+    </mrow>
+   </mtd>
+   <mtd>
+    <mstyle mathvariant='normal'><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow><mi>i</mi><mi>n</mi><mi>c</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>i</mi><mi>v</mi><mi>e</mi>&nbsp;<mi>c</mi><mi>o</mi><mi>n</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>t</mi><mi>s</mi>
+     </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+    </mstyle>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd><mrow/>
+   </mtd>
+   <mtd>
+    <mrow><munder accent='false'><mo> &sum; </mo><mi>j</mi></munder>
+     <msub>
+      <mrow><mi>v</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>i</mi><mi>j</mi>
+       </mrow>
+      </mrow>
+     </msub>
+     <msub>
+      <mrow><mi>x</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>i</mi><mi>j</mi>
+       </mrow>
+      </mrow>
+     </msub><mo>-</mo>
+     <msub>
+      <mrow><mi>p</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub><mo> &ges; </mo><mn>0</mn> <mo>,</mo> <mn>1</mn><mo> &le; </mo><mi>i</mi><mo> &le; </mo><mi>n</mi> 
+    </mrow>
+   </mtd>
+   <mtd>
+    <mstyle mathvariant='normal'><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow><mi>i</mi><mi>n</mi><mi>d</mi><mi>i</mi><mi>v</mi><mi>i</mi><mi>d</mi><mi>u</mi><mi>a</mi><mi>l</mi>&nbsp;<mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi>&nbsp;<mi>c</mi><mi>o</mi><mi>n</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>t</mi><mi>s</mi>
+     </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+    </mstyle>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd><mrow/>
+   </mtd>
+   <mtd>
+    <mrow><munder accent='false'><mo> &sum; </mo><mi>j</mi></munder>
+     <msub>
+      <mrow><mi>x</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>i</mi><mi>j</mi>
+       </mrow>
+      </mrow>
+     </msub><mo> &les; </mo><mn>1</mn> <mo>,</mo> <mn>1</mn><mo> &le; </mo><mi>i</mi><mo> &le; </mo><mi>m</mi> 
+    </mrow>
+   </mtd>
+   <mtd>
+    <mstyle mathvariant='normal'><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow><mi>f</mi><mi>e</mi><mi>a</mi><mi>s</mi><mi>i</mi><mi>b</mi><mi>i</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi>&nbsp;<mi>c</mi><mi>o</mi><mi>n</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>t</mi><mi>s</mi>
+     </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+    </mstyle>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd><mrow/>
+   </mtd>
+   <mtd>
+    <mrow><munder accent='false'><mo> &sum; </mo><mi>i</mi></munder>
+     <msub>
+      <mrow><mi>f</mi>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msub><munder accent='false'><mo> &sum; </mo><mi>j</mi></munder>
+     <msub>
+      <mrow><mi>x</mi>
+      </mrow>
+      <mrow>
+       <mrow><mi>i</mi><mi>j</mi>
+       </mrow>
+      </mrow>
+     </msub><mo> &les; </mo>
+     <mover>
+      <mrow><mi>q</mi>
+      </mrow><mo stretchy="true">&circ;</mo>
+     </mover> 
+    </mrow>
+   </mtd>
+   <mtd>
+    <mstyle mathvariant='normal'><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+     <mrow><mi>s</mi><mi>u</mi><mi>p</mi><mi>p</mi><mi>l</mi><mi>y</mi>&nbsp;<mi>c</mi><mi>o</mi><mi>n</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>t</mi>
+     </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+    </mstyle>
+   </mtd>
+  </mtr>
+ </mtable></math></p>
+<br />
+
+<p>Running this LP on the given input distribution of the agent, gives us (at most) n lotteries which would fetch the seller the maximum expected revenue. Note that there can be more than one type of agents that prefer the same lottery and hence the number of unique lotteries may be less than n.</p>
+
+<p>
+We define some useful quantities which will help us compare and analyze different mechanisms:</p>
+
+<p>
+Quantile: On realizing her type, the agent chooses the lottery that maximizes her utility. As a result, for a given set of lotteries, a mechanism is simply a mapping from the agent types to the set of lotteries. Thus, corresponding to each type there is a total probability that the type will be served (given by <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mo> &sum; </mo>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mi>j</mi>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math>of their preferred lottery). We say that a type is stronger than some other type if there is a higher chance of it being served than the other type, and we use quantile <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>q</mi>
+ </mrow></math> as a measure of this relative strength of types. In particular, the quantile of a type is <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>q</mi>
+ </mrow></math> if the probability that some other type is served over this type is <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>q</mi>
+ </mrow></math>. Thus, type with the largest probability of being served is said to have <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>q</mi><mo>=</mo><mn>0</mn>
+  </mrow>
+ </mrow></math> while the type with lowest probability of being served is said to have <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>q</mi><mo>=</mo><mn>1</mn>
+  </mrow>
+ </mrow></math>.</p>
+
+<p>
+Allocation Rule: The probability of being served as a function of quantile.</p>
+
+<p>
+Revenue Curve: Optimal revenue as a function of ex-ante service probability <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mover>
+   <mrow><mi>q</mi>
+   </mrow><mo stretchy="true">&circ;</mo>
+  </mover>
+ </mrow></math>.</p>
+<h6>2.1 2D agents with seller selling 2 items</h6>
+<p>
+To derive an intuition for the structure of these mechanisms, we &ldquo;plot&rdquo; these lotteries and observe what they look like. How does one &ldquo;plot&rdquo; these lotteries? Consider what happens when there is only one lottery <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>L</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+   <mrow>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>11</mn>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>12</mn>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>p</mi>
+     </mrow>
+     <mrow><mn>1</mn>
+     </mrow>
+    </msub>
+   </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  </mrow>
+ </mrow></math>. If we consider the x and y axes to represent <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>v</mi>
+   </mrow>
+   <mrow><mn>1</mn>
+   </mrow>
+  </msub>
+ </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>v</mi>
+   </mrow>
+   <mrow><mn>2</mn>
+   </mrow>
+  </msub>
+ </mrow></math> resp, then the 1st quadrant of the Euclidean plane represents our type space and we can divide this plane into regions denoting the set of types that prefer L1 and L0 resp.</p>
+
+<p>
+The utility function for L1 is given by <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>u</mi><mo>=</mo>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>11</mn>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>12</mn>
+    </mrow>
+   </msub><mo>-</mo>
+   <msub>
+    <mrow><mi>p</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math>. Consider the set of points that satisfy the equation u = 0 i.e. <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>11</mn>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>12</mn>
+    </mrow>
+   </msub><mo>-</mo>
+   <msub>
+    <mrow><mi>p</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub><mo>=</mo><mn>0</mn>
+  </mrow>
+ </mrow></math>. This is the equation of a line and it divides the space into 2 regions, one where the utility is positive and one where it is negative. Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>l</mi>
+   </mrow>
+   <mrow><mn>01</mn>
+   </mrow>
+  </msub>
+ </mrow></math> denote this line (i.e. set of points where L0 and L1 give the same utility). If this lottery was the only option available, all agents with type in the positive region of this lottery would have bought this lottery and those in the negative region would have preferred to not buy anything (or in other words, they would have preferred to choose L0). Thus a plot of this mechanism highlighting the region where L1 is preferred will be as shown in Fig 1:</p>
+
+<img src='images/single_lottery.png' class="img-responsive" />
+<div align="center" style="font-size:90%;">Figure 1: Plot with only one lottery</div>
+<br/>
+<p>
+Note on the color-coding: We will use blue and red to denote the two items. Thus, a region where the preferred lottery serves item 1 with probability x1 and item 2 with probability x2 will be colored a shade of purple that has x1 and x2 amounts of blue and red in it, respectively.</p>
+
+The line <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>l</mi>
+   </mrow>
+   <mrow><mn>01</mn>
+   </mrow>
+  </msub>
+ </mrow></math> itself represents the set of types for which the lottery gives zero utility. Thus the types that lie on this line are indifferent between the two lottery options on either side, namely L0 and L1. Additionally, for the purpose of algorithmically generating this plot, once we fix the boundaries of our plot, we can view the region representing the set of types that prefer L1 to be represented by a polygon.</p>
+
+<p>
+What happens as we add more lotteries? Suppose there are 2 lotteries, <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>L</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+   <mrow>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>11</mn>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>12</mn>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>p</mi>
+     </mrow>
+     <mrow><mn>1</mn>
+     </mrow>
+    </msub>
+   </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  </mrow>
+ </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>L</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+   <mrow>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>21</mn>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>22</mn>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>p</mi>
+     </mrow>
+     <mrow><mn>2</mn>
+     </mrow>
+    </msub>
+   </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  </mrow>
+ </mrow></math> and assume that the lines corresponding to these lotteries intersect in the first quadrant. Similar to the previous case, each lottery has a positive and a negative region. As shown in Fig 2, of the 4 regions created there will be one region where L1 gives positive utility while L2 gives negative (and hence L1 will be preferred in this region); one where L2 gives positive utility and L1 gives negative (hence L2 will be preferred here) and one where both will give negative utility (where L0 will be preferred). But what happens in the region where both are positive? Which lottery does an agent in that region prefer?</p>
+
+<img src='images/double_lottery_modified_2.png' class="img-responsive" />
+<div align="center" style="font-size:90%;">Figure 2: 4 regions due to 2 lotteries</div>
+<br />
+<p>
+The agent prefers different lotteries on either sides of this region. Moreover, our utility functions corresponding to the two lotteries are continuous linear functions. Clearly, there must be a definite set of points where the preference shifts from one to the other. The set of all such points is given by the function: <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow><mn>11</mn>
+    </mrow>
+   </msub><mo>*</mo>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>11</mn>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow><mn>12</mn>
+    </mrow>
+   </msub><mo>*</mo>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>12</mn>
+    </mrow>
+   </msub><mo>-</mo>
+   <msub>
+    <mrow><mi>p</mi>
+    </mrow>
+    <mrow><mn>1</mn>
+    </mrow>
+   </msub><mo>=</mo>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow><mn>21</mn>
+    </mrow>
+   </msub><mo>*</mo>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>21</mn>
+    </mrow>
+   </msub><mo>+</mo>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow><mn>22</mn>
+    </mrow>
+   </msub><mo>*</mo>
+   <msub>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>22</mn>
+    </mrow>
+   </msub><mo>-</mo>
+   <msub>
+    <mrow><mi>p</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msub>
+  </mrow>
+ </mrow></math> which also represents a line. Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>l</mi>
+   </mrow>
+   <mrow><mn>12</mn>
+   </mrow>
+  </msub>
+ </mrow></math> denote this line (i.e. set of points where L1 and L2 give the same utility). This line divides the fourth region into 2 parts and on one side of this line, L1 is preferred while on the other, L2 is preferred. Note that because of the monotonic nature of our utility functions, all the regions where L1 is preferred are adjacent and form a continuous area, and the same is true for L2. Hence once again, if we fix the boundaries of our plots, then all such regions corresponding to one lottery together form a polygon. In fact, because of the monotonic nature of the utility functions, these polygons are convex in nature (if <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>L</mi>
+   </mrow>
+   <mrow><mi>i</mi>
+   </mrow>
+  </msub>
+ </mrow></math> is preferred over <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>L</mi>
+   </mrow>
+   <mrow><mi>j</mi>
+   </mrow>
+  </msub>
+ </mrow></math> at points A and B, then <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>L</mi>
+   </mrow>
+   <mrow><mi>i</mi>
+   </mrow>
+  </msub>
+ </mrow></math> must be preferred over <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>L</mi>
+   </mrow>
+   <mrow><mi>j</mi>
+   </mrow>
+  </msub>
+ </mrow></math> at every point between A and B). Thus every lottery has a convex polygon corresponding to it. For the two lottery system, the picture would look as shown in Fig 3:</p>
+
+<img src='images/double_lottery.png' class="img-responsive" />
+<div align="center" style="font-size:90%;">Figure 3: Plot with two lotteries</div>
+<br/>
+<p>
+Extending the above analysis for the case of n lotteries, we observe that there will be n lines corresponding to the n lotteries (set of points where the n lotteries give zero utility) and there will be <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo fence='true' stretchy='true' form='prefix'>(</mo><mfrac linethickness='0'><mi>n</mi><mn>2</mn></mfrac><mo fence='true' stretchy='true' form='postfix'>)</mo>
+ </mrow></math> lines for every possible pair of lotteries, corresponding to the set of points where the max utility giving lottery shifts from one to the other. These approximately <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msup>
+   <mrow><mi>n</mi>
+   </mrow>
+   <mrow><mn>2</mn>
+   </mrow>
+  </msup>
+ </mrow></math> lines will result in <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>O</mi><mo>&af;</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <msup>
+   <mrow><mi>n</mi>
+   </mrow>
+   <mrow><mn>4</mn>
+   </mrow>
+  </msup><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+ </mrow></math> regions in the worst case. If we were to examine each region separately and test which lottery gives maximum utility in that region, the time complexity of such an algorithm would be at least <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>O</mi><mo>&af;</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <msup>
+   <mrow><mi>n</mi>
+   </mrow>
+   <mrow><mn>5</mn>
+   </mrow>
+  </msup><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+ </mrow></math>. Can we do better?</p>
+
+<p>The fact that even though there are <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>O</mi><mo>&af;</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <msup>
+   <mrow><mi>n</mi>
+   </mrow>
+   <mrow><mn>4</mn>
+   </mrow>
+  </msup><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+ </mrow></math> regions, our plot in the end will simply be a collection of n polygons (since every lottery is represented by a polygon), suggests that there are redundancies in the above approach and it points to the existence of a faster way of generating these polygons. We notice that the polygon corresponding to a given lottery can be bounded only by lines involving that lottery (in addition to the plot boundary lines). Thus for each lottery there are O(n) such lines and only these lines are material to generating the polygon for this lottery. The second important point to note is that with respect to any lottery <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>L</mi>
+   </mrow>
+   <mrow><mi>i</mi>
+   </mrow>
+  </msub>
+ </mrow></math>, every line of the form <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>l</mi>
+   </mrow>
+   <mrow>
+    <mrow><mi>i</mi><mi>j</mi>
+    </mrow>
+   </mrow>
+  </msub>
+ </mrow></math> has an orientation (i.e. whether the line bounds the polygon from above or below) and this orientation can be determined in constant time (choose a high enough point such that it lies above the line and test which of the two lotteries <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>L</mi>
+   </mrow>
+   <mrow><mi>i</mi>
+   </mrow>
+  </msub>
+ </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>L</mi>
+   </mrow>
+   <mrow><mi>j</mi>
+   </mrow>
+  </msub>
+ </mrow></math> gives higher utility at that point. If <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>L</mi>
+   </mrow>
+   <mrow><mi>i</mi>
+   </mrow>
+  </msub>
+ </mrow></math> gives higher utility, <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>l</mi>
+   </mrow>
+   <mrow>
+    <mrow><mi>i</mi><mi>j</mi>
+    </mrow>
+   </mrow>
+  </msub>
+ </mrow></math> must bound the polygon from below, if <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>L</mi>
+   </mrow>
+   <mrow><mi>j</mi>
+   </mrow>
+  </msub>
+ </mrow></math> gives higher utility, <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <msub>
+   <mrow><mi>l</mi>
+   </mrow>
+   <mrow>
+    <mrow><mi>i</mi><mi>j</mi>
+    </mrow>
+   </mrow>
+  </msub>
+ </mrow></math> must bound the polygon from above).</p>
+
+<p>
+Keeping the above in mind, the problem of finding the regions corresponding to a lottery can be restated as the problem of finding the polygon bounded by n given lines, with a direction associated with each line.</p>
+
+<p>
+One way of creating a polygon given lines and their orientations is to find the lower and upper hulls and combine them. Finding the upper or lower hull in this case is essentially the problem of hidden line removal (a well studied problem frequent in computer graphics) which, given some lines and a viewing direction, decides in time <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>O</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+   <mrow><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi>
+   </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  </mrow>
+ </mrow></math> which parts of which lines will be visible to the viewer. The key observation here is that the slopes of the visible lines go on monotonically increasing (or decreasing) from left to right (depending on whether we are calculating the lower or the upper hull respectively). Thus we sort the lines by their slope in time <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>O</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+   <mrow><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi>
+   </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  </mrow>
+ </mrow></math> and use a divide and conquer approach to determine their visibility: split the lines into left and right halves, solve for them recursively, iterate over the two sets to determine the point at which one set of lines starts overshadowing the other, and combine the two sets around this point. We run this algorithm on all lines that bound the polygon from above (and below) to get the upper (and lower) hulls respectively. We then combine the two hulls using an approach similar to that used in the conquer step of the above algorithm (this time, finding the two points at which the hulls meet, again taking time <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>O</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+   <mrow><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi>
+   </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  </mrow>
+ </mrow></math>). We repeat this process for every lottery and the resulting algorithm has time complexity <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>O</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+   <mrow>
+    <msup>
+     <mrow><mi>n</mi>
+     </mrow>
+     <mrow><mn>2</mn>
+     </mrow>
+    </msup><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi>
+   </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  </mrow>
+ </mrow></math>.</p>
+
+<p>
+Thus, if we start with some input probability distribution for the agent's values for the items, feed it to the above LP to obtain a set of lotteries and feed the lotteries to the plotting algorithm described above, we will have &ldquo;plotted&rdquo; the optimal mechanism for the given agent distribution. Fig 4 shows an example of what such a plot might like:</p>
+
+<img src='images/random_data_1.png' class="img-responsive" />
+<div align="center" style="font-size:90%;">Figure 4: Plot of the revenue-optimal set of lotteries for a given agent distribution. The points marked in black with circles around them represent the input agent types and the sizes of the circles around them denote their respective probabilities. The diagram in the inset shows the allocation rule.</div>
+<br/>
+<p>
+As stated earlier, the polygons are colorcoded to indicate the amount of the two items in the lottery corresponding to that polygon. For example, the purple region in the center reflects the fact that there is red with intensity 0.21 and blue with intensity 0.20 in this region, corresponding to the probabilities of awarding the two items respectively in that lottery. The pure red region on the other hand, signifies that agents in that area choose the lottery that gives them their favorite item.</p>
+
+<p>
+For some specific kinds of distributions the plots look as follows:</p>
+
+<img src='images/unif_data_1.png' class="img-responsive" />
+<div align="center" style="font-size:90%;">Figure 5: Uniform distribution that results in 2 lotteries</div>
+<br/>
+
+<p>Questions: What if the distribution is made finer? What if the x and y intervals are varied? </p>
+
+<img src='images/unif_data_2.png' class="img-responsive" />
+<div align="center" style="font-size:90%;">Figure 6: Uniform distribution with 3 lotteries (Thanassoulis' example) </div>
+<br/>
+<p>
+Thanassoulis [<a href='#key-2'>2</a>] was among the first ones to realize that unlike the single-dimensional case, optimal mechanisms in the multi-dimensional case need not be deterministic but may in fact be randomized. He had first illustrated the existence of a third lottery in the case of <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>U</mi><mo>[</mo><mn>5</mn><mo>,</mo><mn>6</mn>
+   <msup>
+    <mrow><mo>]</mo>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msup>
+  </mrow>
+ </mrow></math> which suggested that contrary to intuition, giving a third option which randomly assigns one of the two items, each with probability <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mfrac>
+   <mrow><mn>1</mn>
+   </mrow>
+   <mrow><mn>2</mn>
+   </mrow>
+  </mfrac>
+ </mrow></math>, and charges a smaller price can lead to a larger revenue. The above plot confirms his claim.</p>
+
+<img src='images/t1_theta_1.png' class="img-responsive" />
+<div align="center" style="font-size:90%;">Figure 7: v-theta distribution</div>
+<br/>
+<p>
+This is a special kind of distribution where the agent types are of the form <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+  <mrow><mi>v</mi><mo>,</mo><mi> &theta; </mi><mi>v</mi>
+  </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+ </mrow></math> with probabilities <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+   <mrow><mi>v</mi><mo>,</mo><mi> &theta; </mi>
+   </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo><mo>=</mo><mi>f</mi><mn>1</mn><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo><mi>v</mi><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo><mo>*</mo><mi>f</mi><mn>2</mn><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo><mi> &theta; </mi><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  </mrow>
+ </mrow></math> for some distributions <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>f</mi><mn>1</mn>
+  </mrow>
+ </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>f</mi><mn>2</mn>
+  </mrow>
+ </mrow></math>. It has been conjectured that posted pricing is the optimal mechanism for this distribution for <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <mover>
+    <mrow><mi>q</mi>
+    </mrow><mo stretchy="true">&circ;</mo>
+   </mover><mo>=</mo><mn>1</mn>
+  </mrow>
+ </mrow></math>. The above plot supports the conjecture.</p>
+
+<img src='images/test_3_28.png' class="img-responsive" />
+<div align="center" style="font-size:90%;">Figure 8: Equal revenue distribution</div>
+<br/>
+<p>
+FIG: The joint distribution got from the distributions of the individual items when the distributions of the individual items are iids is called a product distribution. The distribution in the above example is a special kind of product distribution called the &ldquo;equal revenue distribution&rdquo;, where the distribution of individual items is given by <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow><mi>i</mi>
+    </mrow>
+   </msub><mo>=</mo><mi>i</mi>
+  </mrow>
+ </mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>f</mi><mo>&af;</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+   <msub>
+    <mrow><mi>v</mi>
+    </mrow>
+    <mrow><mi>i</mi>
+    </mrow>
+   </msub><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo><mo>=</mo>
+   <mfrac>
+    <mrow><mn>1</mn>
+    </mrow>
+    <mrow>
+     <msup>
+      <mrow><mn>2</mn>
+      </mrow>
+      <mrow><mi>i</mi>
+      </mrow>
+     </msup>
+    </mrow>
+   </mfrac>
+  </mrow>
+ </mrow></math>.</p>
+
+<p>Some more plots with random types:</p>
+
+<img src='images/random_data_2.png' class="img-responsive" />
+<div align="center" style="font-size:90%;">Figure 9: Plot of some randomly distributed types</div>
+<br/>
+<img src='images/random_data_3.png' class="img-responsive" />
+<div align="center" style="font-size:90%;">Figure 10: Plot of some randomly distributed types</div>
+<br/>
+<p>
+As we can observe from the above plots, there are interesting structural (for example, the shapes of the polygons) and compositional (the gradual change in the color of the lotteries) properties exhibited by these optimal mechanisms. Using the above developed visualization tools we can investigate many interesting questions: How do these plots change as we vary <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mover>
+   <mrow><mi>q</mi>
+   </mrow><mo stretchy="true">&circ;</mo>
+  </mover>
+ </mrow></math>? Or when we add an allocation constraint? What happens when the agent has a private budget in addition to a private value for the item? These and many more such questions will be explored in coming updates.</p>
+
+<h3 class='bibliography'>References</h3>
+
+<div class="row-fluid" id="key-1">
+<div class='span1'>[1]</div><div class="span11">R. Myerson. Optimal auction design. <i>Mathematics of Operations Research</i>, 6:58–73, 1981.</div></div>
+<div class="row-fluid" id="key-2">
+<div class='span1'>[2]</div><div class="span11">John E. Thanassoulis. Haggling Over Substitutes. <i>Journal of Economic Theory</i>, 117(2):217–245, 2004.</div></div>
+<div class="row-fluid" id="key-3">
+<div class='span1'>[3]</div><div class="span11">Alejandro M. Manelli and Daniel R. Vincent. Bundling as an optimal selling mechanism for a multiple-good monopolist. <i>Journal of Economic Theory</i>, 127(1):1 – 35, 2006.</div></div>
+
+</div>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
